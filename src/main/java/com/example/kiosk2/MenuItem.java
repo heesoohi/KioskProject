@@ -11,7 +11,15 @@ public class MenuItem {
         this.description = description;
     }
 
-    public String getMenuItem() {
-        return name + " |  W " + price + " | " + description;
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

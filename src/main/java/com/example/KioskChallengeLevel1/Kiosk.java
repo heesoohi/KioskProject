@@ -17,15 +17,15 @@ public class Kiosk {
         Scanner scanner = new Scanner(System.in);
         boolean isRunning = true;
 
-        System.out.println("[ MAIN MENU ]");
-        for (int i = 0; i < menus.size(); i++) {
-            System.out.println((i + 1) + ". " + menus.get(i).getCategoryName());
-        }
-        System.out.println((menus.size()+1) + ". 장바구니");
-        System.out.println((menus.size()+2) + ". 취소");
-        System.out.println("0. 종료");
-
         while (isRunning) {
+            System.out.println("[ MAIN MENU ]");
+            for (int i = 0; i < menus.size(); i++) {
+                System.out.println((i + 1) + ". " + menus.get(i).getCategoryName());
+            }
+            System.out.println((menus.size()+1) + ". 장바구니");
+            System.out.println((menus.size()+2) + ". 취소");
+            System.out.println("0. 종료");
+
             try {
                 System.out.println("원하는 메뉴 번호를 선택하세요: ");
                 int mainChoice = scanner.nextInt();

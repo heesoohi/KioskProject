@@ -45,7 +45,9 @@ public class Kiosk {
                     } else if (choice == 2) {
                         return;
                     }
-                } else if (mainChoice == menus.size() + 2){
+                } else if (mainChoice == menus.size() + 1 && cart.isEmpty()){
+                    cart.printCart();
+                }else if (mainChoice == menus.size() + 2){
                     if (!cart.isEmpty()) {
                         cart.clearCart();
                         System.out.println("진행 중인 주문이 취소되었습니다.");

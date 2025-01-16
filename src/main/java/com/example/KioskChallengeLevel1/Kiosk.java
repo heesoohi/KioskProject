@@ -18,6 +18,8 @@ public class Kiosk {
         boolean isRunning = true;
 
         while (isRunning) {
+
+            // 키오스크 실행 시 메인 화면 출력
             System.out.println("[ MAIN MENU ]");
             for (int i = 0; i < menus.size(); i++) {
                 System.out.println((i + 1) + ". " + menus.get(i).getCategoryName());
@@ -30,12 +32,13 @@ public class Kiosk {
                 System.out.println("원하는 메뉴 번호를 선택하세요: ");
                 int mainChoice = scanner.nextInt();
 
+                // 입력 번호에 적절한 로직 수행
                 if (mainChoice == 0) {
                     System.out.println("프로그램을 종료합니다.");
                     isRunning = false;
-                } else if (mainChoice > 0 && mainChoice <= menus.size()) {
+                } else if (mainChoice > 0 && mainChoice <= menus.size()) { // 메뉴 번호 선택 시 메뉴 아이템 출력
                     menus.get(mainChoice - 1).printMenu(cart, scanner, isRunning);
-                } else if(mainChoice == menus.size() + 1 && !cart.isEmpty()) {
+                } else if(mainChoice == menus.size() + 1 && !cart.isEmpty()) { // 장바구니 선택 시 장바구니 내용 출력
                     cart.printCart();
                     System.out.println("\n1. 주문    2. 메뉴");
                     int choice = scanner.nextInt();

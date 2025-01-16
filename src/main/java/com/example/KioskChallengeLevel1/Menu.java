@@ -24,6 +24,7 @@ public class Menu {
         menuItems.add(item);
     }
 
+    // 키오스크에서 메뉴 선택 시 메뉴 아이템 출력해주는 메서드
     public void printMenu(Cart cart, Scanner scanner, Boolean isRunning) {
         while (isRunning) {
             System.out.println("[ " + categoryName.toUpperCase() + " MENU ]");

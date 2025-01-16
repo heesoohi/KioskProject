@@ -6,6 +6,7 @@ import java.util.List;
 public class Cart {
     private List<CartItem> items = new ArrayList<>();
 
+    // 장바구니가 비어있을 때와 물건이 있을 때 구분하여 로직 수행
     public void addItem(MenuItem menuItem) {
         for (CartItem item : items) {
             if (item.getMenuItem().getName().equals(menuItem.getName())) {
@@ -14,6 +15,7 @@ public class Cart {
             }
         }
         items.add(new CartItem(menuItem, 1));
+        printCart();
     }
 
     public void printCart() {

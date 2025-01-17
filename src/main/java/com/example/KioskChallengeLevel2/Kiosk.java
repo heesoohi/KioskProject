@@ -59,6 +59,8 @@ public class Kiosk {
                     cart.printCart();
                     System.out.println("\n1. 주문    2. 메뉴");
                     int choice = scanner.nextInt();
+                    scanner.nextLine();
+
                     if (choice == 1) {
                         // 사용자 유형 선택
                         System.out.println("[할인] \n1. 학생 \n2. 군인 \n3. 해당 없음");
@@ -72,12 +74,14 @@ public class Kiosk {
                             switch (discountChoice) {
                                 case 1:
                                     userType = UserType.STUDENT;
-                                    System.out.println("10% 할인! 총 금액 : "+ cart.getTotal()*userType.getDiscountRatio());
+                                    System.out.println("10% 할인! 총 금액 : "+ cart.getTotal()*(1-userType.getDiscountRatio()));
                                     cart.clearCart();
+                                    break;
                                 case 2:
                                     userType = UserType.SOLDIER;
-                                    System.out.println("20% 할인! 총 금액 : "+ cart.getTotal()*userType.getDiscountRatio());
+                                    System.out.println("20% 할인! 총 금액 : "+ cart.getTotal()*(1-userType.getDiscountRatio()));
                                     cart.clearCart();
+                                    break;
                             }
                         }
                     } else if (choice == 2) {
